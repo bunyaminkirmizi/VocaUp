@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:endustriyel_app/screens/components/rounded_button.dart';
-import 'package:endustriyel_app/screens/mainpage/components/background.dart';
+import 'package:endustriyel_app/screens/pages/mainpage/components/background.dart';
 import 'package:endustriyel_app/constants/colors.dart';
 
 class Body extends StatelessWidget {
@@ -16,8 +16,7 @@ class Body extends StatelessWidget {
     return Background(
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[Text("mainpage")],
+      children: <Widget>[Text("Account")],
     ));
   }
 }
-

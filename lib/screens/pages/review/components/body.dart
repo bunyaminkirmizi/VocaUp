@@ -7,6 +7,8 @@ import 'package:endustriyel_app/screens/pages/review/components/background.dart'
 import 'package:endustriyel_app/constants/colors.dart';
 import 'package:flip_card/flip_card.dart';
 
+GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
+
 class Body extends StatelessWidget {
   const Body({
     super.key,
@@ -58,10 +60,14 @@ class _Page extends State<Page> {
     }
     void makeLastCardAngled(){
       
+        if(cardKey.currentState?.isFront == false)
+        cardKey.currentState?.toggleCardWithoutAnimation();
       if(cardStack.isEmpty){
         setState(() {
           visible=false;
+          
         });
+
       }else{
         // cardStack.removeAt(cardStack.length-1);
         Object stackTop = cardStack.last;
@@ -172,6 +178,7 @@ class AngledCard extends StatelessWidget {
       alignment: Alignment(distancex*0.03,distancey*0.03),
       child: Container(
           child: FlipCard(
+            key: cardKey,
             side: side,
             speed:340,front: Card(
             color: Colors.red,

@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:endustriyel_app/screens/components/rounded_button.dart';
 import 'package:endustriyel_app/screens/pages/review/components/background.dart';
 import 'package:endustriyel_app/constants/colors.dart';
+import 'package:flip_card/flip_card.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -65,9 +66,8 @@ class _Page extends State<Page> {
         // cardStack.removeAt(cardStack.length-1);
         Object stackTop = cardStack.last;
         cardStack.removeLast();
-        print((stackTop as PositionedCard).text);
         setState(() {
-          lastCard = (stackTop as PositionedCard).text;
+          lastCard = (stackTop as PositionedCard).text+' its last card';
         });
       }
     }
@@ -86,7 +86,7 @@ class _Page extends State<Page> {
         ...cardStack,
         AngledCard(
           angle: angle,
-          visible:visible,
+          visible: visible,
           distancex: distancex,
           distancey: distancey,
           text: lastCard)]),
@@ -127,6 +127,11 @@ class PositionedCard extends StatelessWidget {
         // alignment: Alignment(,distancey*0.01),
         child: Container(
             child: Card(
+              color: Colors.blue,
+                          shape: RoundedRectangleBorder(
+              side :BorderSide.none,
+              borderRadius: BorderRadius.all(Radius.circular(25))),
+
               child: SizedBox(
         width: 300,
         height: 550,
@@ -146,6 +151,7 @@ class AngledCard extends StatelessWidget {
     required this.distancey,
     required this.text,
     this.visible = true,
+    this.side = CardSide.FRONT
   });
 
   final double angle;
@@ -153,6 +159,7 @@ class AngledCard extends StatelessWidget {
   final double distancey;
   final String text;
   final bool visible;
+  final CardSide side;
 
   @override
   Widget build(BuildContext context) {
@@ -162,11 +169,11 @@ class AngledCard extends StatelessWidget {
       visible :visible,
       child:Align(
 
-      alignment: Alignment(distancex*0.03,distancey*1),
+      alignment: Alignment(distancex*0.03,distancey*0.03),
       child: Container(
-        
-          child: Card(
-            
+          child: FlipCard(
+            side: side,
+            speed:340,front: Card(
             color: Colors.red,
             shape: RoundedRectangleBorder(
               side :BorderSide.none,
@@ -174,9 +181,20 @@ class AngledCard extends StatelessWidget {
             child: SizedBox(
       width: 300,
       height: 550,
-      child: Center(child: Text(text)),
+      child: Center(child: Text(text + ' front')),
             ),
-          ),
+          ),back:Card(
+            
+            color: Colors.green,
+            shape: RoundedRectangleBorder(
+              side :BorderSide.none,
+              borderRadius: BorderRadius.all(Radius.circular(25))),
+            child: SizedBox(
+      width: 300,
+      height: 550,
+      child: Center(child: Text(text + ' back')),
+            ),
+          ),)
         ),
     ),)
         );

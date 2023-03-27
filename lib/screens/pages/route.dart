@@ -18,7 +18,7 @@ class Route extends StatefulWidget {
 
 class _BasicBottomNavBarState extends State<Route> {
   int _selectedIndex = 0;
-
+  
   static const List<Widget> _pages = <Widget>[
     Stats.Body(),
     Review.Body(),
@@ -31,18 +31,21 @@ class _BasicBottomNavBarState extends State<Route> {
       _selectedIndex = index;
     });
   }
+    
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       // appBar: AppBar(
       //   title: const Text('BottomNavigationBar Demo'),
       // ),
-      body: Center(
-        child: _pages.elementAt(_selectedIndex),
-      ),
-      // bottomNavigationBar: BottomNavBar.BottomNavBar(),
-      bottomNavigationBar: BottomNavigationBar(
+      body: Stack(
+        children: <Widget>[
+          SizedBox(height: size.height-50, child:_pages.elementAt(_selectedIndex)),
+          SizedBox(height: size.height,child: Align(
+            alignment: Alignment.bottomCenter,
+            child:BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
     
         items: const <BottomNavigationBarItem>[
@@ -65,7 +68,11 @@ class _BasicBottomNavBarState extends State<Route> {
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-      ),
+      )),),
+          ],
+      )
+      // bottomNavigationBar: BottomNavBar.BottomNavBar(),
+      // bottomNavigationBar: 
     );
   }
 }

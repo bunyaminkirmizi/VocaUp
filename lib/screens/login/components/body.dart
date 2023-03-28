@@ -9,7 +9,6 @@ import 'package:endustriyel_app/screens/pages/route.dart' as PagesRoute;
 import 'package:endustriyel_app/screens/login/components/background.dart';
 import 'package:endustriyel_app/screens/signup/index.dart';
 
-
 class Body extends StatelessWidget {
   const Body({
     super.key,
@@ -47,22 +46,26 @@ class Body extends StatelessWidget {
             icon: Icons.lock,
             obscureText: true,
             suffixIcon: Icons.remove_red_eye),
-        RoundedButton(text: "Giriş Yap", onPressed: () {
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-                  return PagesRoute.Route();
-                }));
-        }),
+        RoundedButton(
+            text: "Giriş Yap",
+            onPressed: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) {
+                return PagesRoute.Route();
+              }));
+            }),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text("Hesabınız yok mu? "),
             SizedBox(
-          height: size.height * 0.03,
-        ),
-            AldreadyHaveAnAccountCheck(onPress:(){
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-                  return SignUpScreen();
-                }));
+              height: size.height * 0.03,
+            ),
+            AldreadyHaveAnAccountCheck(onPress: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) {
+                return SignUpScreen();
+              }));
             })
           ],
         )
@@ -70,5 +73,3 @@ class Body extends StatelessWidget {
     ));
   }
 }
-
-

@@ -8,14 +8,12 @@ void main() {
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      
-      title:'Endustriyel',
-      theme: ThemeData( primaryColor: kPrimaryColor,
-      scaffoldBackgroundColor: Colors.white
-      ),
+        debugShowCheckedModeBanner: false,
+        title: 'Endustriyel',
+        theme: ThemeData(
+            primaryColor: kPrimaryColor, scaffoldBackgroundColor: Colors.white),
         home: WelcomeScreen());
   }
 }

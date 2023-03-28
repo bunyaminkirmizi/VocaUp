@@ -23,108 +23,114 @@ class Body extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text("mainpage"),
-      ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Stats();
-                }));
-              },child: Text("stats")),
-      ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Review();
-                }));
-              },child: Text("review")),
-      ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return MyWords();
-                }));
-              },child: Text("mywords")),
-      ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Account();
-                }));
-              },child: Text("account")),
-              // Scaffold(
-                
-                // bottomNavigationBar: SafeArea(
-                //   child: Container(
-                //   padding:EdgeInsets.all(12),
-                //   margin:EdgeInsets.symmetric(
-                //     horizontal: 24
-                //   ),
-                //   decoration: BoxDecoration(
-                //   color: Colors.grey.withOpacity(0.8),
-                //   borderRadius: BorderRadius.all(Radius.circular(24))
-                // ),
-                // child: Row(
-                //   mainAxisSize: MainAxisSize.min,
+        ElevatedButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Stats();
+              }));
+            },
+            child: Text("stats")),
+        ElevatedButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Review();
+              }));
+            },
+            child: Text("review")),
+        ElevatedButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return MyWords();
+              }));
+            },
+            child: Text("mywords")),
+        ElevatedButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Account();
+              }));
+            },
+            child: Text("account")),
+        // Scaffold(
 
-                // children:[
-                //   SizedBox(
-                //     height: 36,
-                //     width: 36,
-                //     child: Icon(Icons.house)
+        // bottomNavigationBar: SafeArea(
+        //   child: Container(
+        //   padding:EdgeInsets.all(12),
+        //   margin:EdgeInsets.symmetric(
+        //     horizontal: 24
+        //   ),
+        //   decoration: BoxDecoration(
+        //   color: Colors.grey.withOpacity(0.8),
+        //   borderRadius: BorderRadius.all(Radius.circular(24))
+        // ),
+        // child: Row(
+        //   mainAxisSize: MainAxisSize.min,
 
-                //   ),SizedBox(
-                //     height: 36,
-                //     width: 36,
-                //     child: Icon(Icons.quiz)
+        // children:[
+        //   SizedBox(
+        //     height: 36,
+        //     width: 36,
+        //     child: Icon(Icons.house)
 
-                //   ),SizedBox(
-                //     height: 36,
-                //     width: 36,
-                //     child: Icon(Icons.my_library_add)
+        //   ),SizedBox(
+        //     height: 36,
+        //     width: 36,
+        //     child: Icon(Icons.quiz)
 
-                //   ),SizedBox(
-                //     height: 36,
-                //     width: 36,
-                //     child: Icon(Icons.person)
+        //   ),SizedBox(
+        //     height: 36,
+        //     width: 36,
+        //     child: Icon(Icons.my_library_add)
 
-                //   )
-                // ]
-                // ),
-                // )
-                // ),
-              // ),
-              
-              
-              // Scaffold(),
-              //   // bottomNavigationBar: Container(
-              //     // padding:EdgeInsets.all(12),
-              //     // margin:EdgeInsets.symmetric(
-              //     //   horizontal: 24
-              //     // ),
-              //   //   decoration: BoxDecoration(
-              //   //   color: Colors.black.withOpacity(0.8),
-              //   //   // borderRadius: BorderRadius.all(Radius.circular(24))
-              //   // ),
-              //   // child: Row(
-              //   // children:[
-              //   //   SizedBox(
-              //   //     height: 36,
-              //   //     width: 36,
-              //   //     child: Icon(Icons.house)
+        //   ),SizedBox(
+        //     height: 36,
+        //     width: 36,
+        //     child: Icon(Icons.person)
 
-              //   //   ),SizedBox(
-              //   //     height: 36,
-              //   //     width: 36,
-              //   //     child: Icon(Icons.house)
+        //   )
+        // ]
+        // ),
+        // )
+        // ),
+        // ),
 
-              //   //   ),SizedBox(
-              //   //     height: 36,
-              //   //     width: 36,
-              //   //     child: Icon(Icons.house)
+        // Scaffold(),
+        //   // bottomNavigationBar: Container(
+        //     // padding:EdgeInsets.all(12),
+        //     // margin:EdgeInsets.symmetric(
+        //     //   horizontal: 24
+        //     // ),
+        //   //   decoration: BoxDecoration(
+        //   //   color: Colors.black.withOpacity(0.8),
+        //   //   // borderRadius: BorderRadius.all(Radius.circular(24))
+        //   // ),
+        //   // child: Row(
+        //   // children:[
+        //   //   SizedBox(
+        //   //     height: 36,
+        //   //     width: 36,
+        //   //     child: Icon(Icons.house)
 
-              //   //   ),SizedBox(
-              //   //     height: 36,
-              //   //     width: 36,
-              //   //     child: Icon(Icons.house)
+        //   //   ),SizedBox(
+        //   //     height: 36,
+        //   //     width: 36,
+        //   //     child: Icon(Icons.house)
 
-              //   //   )
-              //   // ]
-              //   // ),
-              //   // )
-              // ),
-              
+        //   //   ),SizedBox(
+        //   //     height: 36,
+        //   //     width: 36,
+        //   //     child: Icon(Icons.house)
+
+        //   //   ),SizedBox(
+        //   //     height: 36,
+        //   //     width: 36,
+        //   //     child: Icon(Icons.house)
+
+        //   //   )
+        //   // ]
+        //   // ),
+        //   // )
+        // ),
       ],
     ));
   }

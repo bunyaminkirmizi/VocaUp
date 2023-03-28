@@ -38,64 +38,68 @@ class _Page extends State<Page> {
   String lastCard = '';
   bool visible = true;
 
-  List<Widget> cardStack =  [
-        PositionedCard(text:"text1"),
-        PositionedCard(text:"text2"),
-        PositionedCard(text:"text3"),
-        PositionedCard(text:"text4"),
-        PositionedCard(text:"text5"),
-        PositionedCard(text:"text6"),
-        PositionedCard(text:"text7"),
-      ];
+  List<Widget> cardStack = [
+    PositionedCard(text: "text1"),
+    PositionedCard(text: "text2"),
+    PositionedCard(text: "text3"),
+    PositionedCard(text: "text4"),
+    PositionedCard(text: "text5"),
+    PositionedCard(text: "text6"),
+    PositionedCard(text: "text7"),
+  ];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-  
+
     double calculateAngle(double distancex) {
       print('angle');
       double maxAngle = 15.0;
       double angle = (distancex / (size.width / 3)) * maxAngle;
-      angle.abs() > maxAngle ? angle>0 ? maxAngle: -maxAngle : angle ;
+      angle.abs() > maxAngle
+          ? angle > 0
+              ? maxAngle
+              : -maxAngle
+          : angle;
       return angle;
     }
-    void makeLastCardAngled(){
-      
-        if(cardKey.currentState?.isFront == false)
-        cardKey.currentState?.toggleCardWithoutAnimation();
-      if(cardStack.isEmpty){
-        setState(() {
-          visible=false;
-          
-        });
 
-      }else{
+    void makeLastCardAngled() {
+      if (cardKey.currentState?.isFront == false)
+        cardKey.currentState?.toggleCardWithoutAnimation();
+      if (cardStack.isEmpty) {
+        setState(() {
+          visible = false;
+        });
+      } else {
         // cardStack.removeAt(cardStack.length-1);
         Object stackTop = cardStack.last;
         cardStack.removeLast();
         setState(() {
-          lastCard = (stackTop as PositionedCard).text+' its last card';
+          lastCard = (stackTop as PositionedCard).text + ' its last card';
         });
       }
     }
-    bool? answer(double distancex){
-      if(distancex>(size.width / 4)){
+
+    bool? answer(double distancex) {
+      if (distancex > (size.width / 4)) {
         return true;
-      }else if (distancex<-(size.width / 4)){
+      } else if (distancex < -(size.width / 4)) {
         return false;
-      }else{
+      } else {
         return null;
       }
     }
-    
+
     return GestureDetector(
       child: Stack(children: [
         ...cardStack,
         AngledCard(
-          angle: angle,
-          visible: visible,
-          distancex: distancex,
-          distancey: distancey,
-          text: lastCard)]),
+            angle: angle,
+            visible: visible,
+            distancex: distancex,
+            distancey: distancey,
+            text: lastCard)
+      ]),
       onVerticalDragStart: (details) {
         initialPosition = details.globalPosition;
       },
@@ -109,7 +113,7 @@ class _Page extends State<Page> {
       onVerticalDragEnd: (details) {
         setState(() {
           makeLastCardAngled();
-          
+
           print(cardStack);
           distancex = 0;
           distancey = 0;
@@ -123,42 +127,37 @@ class _Page extends State<Page> {
 
 class PositionedCard extends StatelessWidget {
   final String text;
-  const PositionedCard({
-    super.key,
-    required this.text
-  });
+  const PositionedCard({super.key, required this.text});
   @override
   Widget build(BuildContext context) {
     return Align(
-        // alignment: Alignment(,distancey*0.01),
-        child: Container(
-            child: Card(
-              color: Colors.blue,
-                          shape: RoundedRectangleBorder(
-              side :BorderSide.none,
+      // alignment: Alignment(,distancey*0.01),
+      child: Container(
+        child: Card(
+          color: Colors.blue,
+          shape: RoundedRectangleBorder(
+              side: BorderSide.none,
               borderRadius: BorderRadius.all(Radius.circular(25))),
-
-              child: SizedBox(
-        width: 300,
-        height: 550,
-        child: Center(child: Text(text)),
-              ),
-            ),
+          child: SizedBox(
+            width: 300,
+            height: 550,
+            child: Center(child: Text(text)),
           ),
-      );
+        ),
+      ),
+    );
   }
 }
 
 class AngledCard extends StatelessWidget {
-  const AngledCard({
-    super.key,
-    required this.angle,
-    required this.distancex,
-    required this.distancey,
-    required this.text,
-    this.visible = true,
-    this.side = CardSide.FRONT
-  });
+  const AngledCard(
+      {super.key,
+      required this.angle,
+      required this.distancex,
+      required this.distancey,
+      required this.text,
+      this.visible = true,
+      this.side = CardSide.FRONT});
 
   final double angle;
   final double distancex;
@@ -170,40 +169,40 @@ class AngledCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RotationTransition(
-    turns: AlwaysStoppedAnimation(angle / 360),
-    child: Visibility (
-      visible :visible,
-      child:Align(
-
-      alignment: Alignment(distancex*0.03,distancey*0.03),
-      child: Container(
-          child: FlipCard(
-            key: cardKey,
-            side: side,
-            speed:340,front: Card(
-            color: Colors.red,
-            shape: RoundedRectangleBorder(
-              side :BorderSide.none,
-              borderRadius: BorderRadius.all(Radius.circular(25))),
-            child: SizedBox(
-      width: 300,
-      height: 550,
-      child: Center(child: Text(text + ' front')),
-            ),
-          ),back:Card(
-            
-            color: Colors.green,
-            shape: RoundedRectangleBorder(
-              side :BorderSide.none,
-              borderRadius: BorderRadius.all(Radius.circular(25))),
-            child: SizedBox(
-      width: 300,
-      height: 550,
-      child: Center(child: Text(text + ' back')),
-            ),
-          ),)
-        ),
-    ),)
-        );
+        turns: AlwaysStoppedAnimation(angle / 360),
+        child: Visibility(
+          visible: visible,
+          child: Align(
+            alignment: Alignment(distancex * 0.03, distancey * 0.03),
+            child: Container(
+                child: FlipCard(
+              key: cardKey,
+              side: side,
+              speed: 340,
+              front: Card(
+                color: Colors.red,
+                shape: RoundedRectangleBorder(
+                    side: BorderSide.none,
+                    borderRadius: BorderRadius.all(Radius.circular(25))),
+                child: SizedBox(
+                  width: 300,
+                  height: 550,
+                  child: Center(child: Text(text + ' front')),
+                ),
+              ),
+              back: Card(
+                color: Colors.green,
+                shape: RoundedRectangleBorder(
+                    side: BorderSide.none,
+                    borderRadius: BorderRadius.all(Radius.circular(25))),
+                child: SizedBox(
+                  width: 300,
+                  height: 550,
+                  child: Center(child: Text(text + ' back')),
+                ),
+              ),
+            )),
+          ),
+        ));
   }
 }

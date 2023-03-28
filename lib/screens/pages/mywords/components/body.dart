@@ -16,40 +16,32 @@ class Body extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Background(
         child: Container(
-
-            // mainAxisAlignment: MainAxisAlignment.center,
-            child: Stack(
-      children: <Widget>[
-        Positioned(
-          top: 0.0,
-          left: 0.0,
-          right: 0.0,
-          child: Container(
-            width: 200.0,
+      width: double.infinity,
+      // height: size.height,
+      alignment: Alignment.topCenter,
+      child: Column(
+        children: [
+          Container(
+            width: double.infinity,
             height: 100.0,
             color: Colors.blue,
             child: Align(
               alignment: FractionalOffset.center,
               child: RoundedInputField(
-                  hintText: 'Kelime Ara',
+                  hintText: 'Kelime Ara/Ekle',
                   icon: Icons.search,
                   onChanged: (value) {
                     print(value);
                   }),
             ),
           ),
-        ),
-        Positioned(
-            top: 100.0,
-            left: 0.0,
-            right: 0.0,
-            child: SizedBox(
-              height: size.height-100-100,
-              width:100,
-              child: ListTileSelectExample())
-            ),
-      ],
-    )));
+          Expanded(
+            child:
+                Container(color: Colors.blue, child: ListTileSelectExample()),
+          ),
+        ],
+      ),
+    ));
   }
 }
 

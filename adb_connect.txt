@@ -1,10 +1,10 @@
 
 IF DOESNT WORK TRY ADMIN SHELL
-PS C:\Users\bunya\endustriyel-app\endustriyel_app> adb tcpip 5555
-PS C:\Users\bunya\endustriyel-app\endustriyel_app> adb devices   
+PS C:\Users\bunya\endustriyel-app\voca_up> adb tcpip 5555
+PS C:\Users\bunya\endustriyel-app\voca_up> adb devices   
 List of devices attached
 89U4C1862300495 device
 
-PS C:\Users\bunya\endustriyel-app\endustriyel_app> adb tcpip 5555
+PS C:\Users\bunya\endustriyel-app\voca_up> adb tcpip 5555
 restarting in TCP mode port: 5555
-PS C:\Users\bunya\endustriyel-app\endustriyel_app> adb connect 192.168.1.57:5555
+PS C:\Users\bunya\endustriyel-app\voca_up> adb connect 192.168.1.57:5555

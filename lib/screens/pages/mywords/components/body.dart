@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:endustriyel_app/screens/components/rounded_button.dart';
-import 'package:endustriyel_app/screens/pages/mainpage/components/background.dart';
-import 'package:endustriyel_app/constants/colors.dart';
-import 'package:endustriyel_app/constants/colors.dart';
-import 'package:endustriyel_app/screens/components/rounded_input_field.dart';
-import 'package:endustriyel_app/models/db.dart';
+import 'package:voca_up/screens/components/rounded_button.dart';
+import 'package:voca_up/screens/pages/mainpage/components/background.dart';
+import 'package:voca_up/constants/colors.dart';
+import 'package:voca_up/constants/colors.dart';
+import 'package:voca_up/screens/components/rounded_input_field.dart';
+import 'package:voca_up/models/db.dart';
 
 import 'dart:async';
 

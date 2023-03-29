@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:endustriyel_app/screens/pages/account/components/body.dart'
-    as Account;
-import 'package:endustriyel_app/screens/pages/mainpage/components/body.dart'
+import 'package:voca_up/screens/pages/account/components/body.dart' as Account;
+import 'package:voca_up/screens/pages/mainpage/components/body.dart'
     as MainPage;
-import 'package:endustriyel_app/screens/pages/mywords/components/body.dart'
-    as MyWords;
-import 'package:endustriyel_app/screens/pages/review/components/body.dart'
-    as Review;
-import 'package:endustriyel_app/screens/pages/stats/components/body.dart'
-    as Stats;
-import 'package:endustriyel_app/screens/pages/components/BottomNavBar.dart'
+import 'package:voca_up/screens/pages/mywords/components/body.dart' as MyWords;
+import 'package:voca_up/screens/pages/review/components/body.dart' as Review;
+import 'package:voca_up/screens/pages/stats/components/body.dart' as Stats;
+import 'package:voca_up/screens/pages/components/BottomNavBar.dart'
     as BottomNavBar;
 
 class Route extends StatefulWidget {

@@ -2,7 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
-import 'package:endustriyel_app/screens/login/components/text_field_container.dart';
+import 'package:voca_up/screens/login/components/text_field_container.dart';
 
 class RoundedInputField extends StatelessWidget {
   final String hintText;

@@ -1,4 +1,4 @@
-import 'package:endustriyel_app/constants/colors.dart';
+import 'package:voca_up/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class AldreadyHaveAnAccountCheck extends StatelessWidget {

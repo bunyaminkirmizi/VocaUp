@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:endustriyel_app/constants/colors.dart';
+import 'package:voca_up/constants/colors.dart';
 
 class TextFieldContainer extends StatelessWidget {
   final Widget child;

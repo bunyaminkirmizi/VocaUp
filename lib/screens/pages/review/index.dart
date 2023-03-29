@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:endustriyel_app/screens/pages/review/components/body.dart'
-    as Main;
-import 'package:endustriyel_app/screens/pages/components/BottomNavBar.dart';
+import 'package:voca_up/screens/pages/review/components/body.dart' as Main;
+import 'package:voca_up/screens/pages/components/BottomNavBar.dart';
 
 class Review extends StatelessWidget {
   @override

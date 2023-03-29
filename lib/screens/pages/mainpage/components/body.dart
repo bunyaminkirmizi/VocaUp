@@ -1,13 +1,13 @@
-import 'package:endustriyel_app/screens/pages/account/index.dart';
-import 'package:endustriyel_app/screens/pages/mywords/index.dart';
-import 'package:endustriyel_app/screens/pages/review/index.dart';
-import 'package:endustriyel_app/screens/pages/stats/index.dart';
+import 'package:voca_up/screens/pages/account/index.dart';
+import 'package:voca_up/screens/pages/mywords/index.dart';
+import 'package:voca_up/screens/pages/review/index.dart';
+import 'package:voca_up/screens/pages/stats/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:endustriyel_app/screens/components/rounded_button.dart';
-import 'package:endustriyel_app/screens/pages/mainpage/components/background.dart';
-import 'package:endustriyel_app/constants/colors.dart';
+import 'package:voca_up/screens/components/rounded_button.dart';
+import 'package:voca_up/screens/pages/mainpage/components/background.dart';
+import 'package:voca_up/constants/colors.dart';
 // import 'package:rive/rive.dart';
 
 class Body extends StatelessWidget {

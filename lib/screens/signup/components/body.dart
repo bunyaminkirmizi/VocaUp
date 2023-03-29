@@ -1,14 +1,14 @@
-import 'package:endustriyel_app/screens/components/rounded_button.dart';
-import 'package:endustriyel_app/screens/login/components/already_have_an_account_check.dart';
-import 'package:endustriyel_app/screens/login/components/rounded_input_field.dart';
-import 'package:endustriyel_app/screens/login/index.dart';
-import 'package:endustriyel_app/screens/signup/index.dart';
-import 'package:endustriyel_app/screens/welcome/index.dart';
+import 'package:voca_up/screens/components/rounded_button.dart';
+import 'package:voca_up/screens/login/components/already_have_an_account_check.dart';
+import 'package:voca_up/screens/login/components/rounded_input_field.dart';
+import 'package:voca_up/screens/login/index.dart';
+import 'package:voca_up/screens/signup/index.dart';
+import 'package:voca_up/screens/welcome/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:endustriyel_app/screens/signup/components/background.dart';
-import 'package:endustriyel_app/constants/colors.dart';
+import 'package:voca_up/screens/signup/components/background.dart';
+import 'package:voca_up/constants/colors.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -53,18 +53,19 @@ class Body extends StatelessWidget {
           children: <Widget>[
             Text("Hesabınız yok mu? "),
             SizedBox(
-          height: size.height * 0.03,
-        ),
-            AldreadyHaveAnAccountCheck(login:false,onPress:(){
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-                  return LoginScreen();
-                }));
-            })
+              height: size.height * 0.03,
+            ),
+            AldreadyHaveAnAccountCheck(
+                login: false,
+                onPress: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) {
+                    return LoginScreen();
+                  }));
+                })
           ],
         )
       ],
     ));
   }
 }
-
-

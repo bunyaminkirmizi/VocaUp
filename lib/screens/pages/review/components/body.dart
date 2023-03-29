@@ -2,9 +2,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:endustriyel_app/screens/components/rounded_button.dart';
-import 'package:endustriyel_app/screens/pages/review/components/background.dart';
-import 'package:endustriyel_app/constants/colors.dart';
+import 'package:voca_up/screens/components/rounded_button.dart';
+import 'package:voca_up/screens/pages/review/components/background.dart';
+import 'package:voca_up/constants/colors.dart';
 import 'package:flip_card/flip_card.dart';
 
 GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();

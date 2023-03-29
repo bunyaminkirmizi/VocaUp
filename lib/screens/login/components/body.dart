@@ -1,13 +1,13 @@
-import 'package:endustriyel_app/screens/pages/mainpage/index.dart';
+import 'package:voca_up/screens/pages/mainpage/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:endustriyel_app/screens/components/rounded_button.dart';
-import 'package:endustriyel_app/screens/login/components/already_have_an_account_check.dart';
-import 'package:endustriyel_app/screens/login/components/rounded_input_field.dart';
-import 'package:endustriyel_app/screens/pages/route.dart' as PagesRoute;
-import 'package:endustriyel_app/screens/login/components/background.dart';
-import 'package:endustriyel_app/screens/signup/index.dart';
+import 'package:voca_up/screens/components/rounded_button.dart';
+import 'package:voca_up/screens/login/components/already_have_an_account_check.dart';
+import 'package:voca_up/screens/login/components/rounded_input_field.dart';
+import 'package:voca_up/screens/pages/route.dart' as PagesRoute;
+import 'package:voca_up/screens/login/components/background.dart';
+import 'package:voca_up/screens/signup/index.dart';
 
 class Body extends StatelessWidget {
   const Body({

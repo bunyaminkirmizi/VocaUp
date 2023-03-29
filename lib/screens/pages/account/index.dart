@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:endustriyel_app/screens/pages/account/components/body.dart';
-import 'package:endustriyel_app/screens/pages/components/BottomNavBar.dart';
+import 'package:voca_up/screens/pages/account/components/body.dart';
+import 'package:voca_up/screens/pages/components/BottomNavBar.dart';
 
 class Account extends StatelessWidget {
   @override

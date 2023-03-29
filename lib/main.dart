@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:endustriyel_app/screens/welcome/index.dart';
 import 'package:endustriyel_app/constants/colors.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 

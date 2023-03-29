@@ -4,16 +4,39 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:endustriyel_app/screens/components/rounded_button.dart';
 import 'package:endustriyel_app/screens/pages/mainpage/components/background.dart';
 import 'package:endustriyel_app/constants/colors.dart';
+import 'package:endustriyel_app/constants/colors.dart';
 import 'package:endustriyel_app/screens/components/rounded_input_field.dart';
+import 'package:endustriyel_app/models/db.dart';
+
+import 'dart:async';
+
+import 'package:flutter/widgets.dart';
+import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart' as sql;
 
 class Body extends StatelessWidget {
   const Body({
     super.key,
   });
+  static Future<int> createItem(String? title, String? descrption) async {
+    final db = await DatabaseHelper.open();
+
+    final data = {'title': title, 'description': descrption};
+    final id = await db.insert('items', data,
+        conflictAlgorithm: sql.ConflictAlgorithm.replace);
+    return id;
+  }
+
+  static Future<List<Map<String, dynamic>>> getItems() async {
+    final db = await DatabaseHelper.open();
+    return db.query('items', orderBy: "id");
+  }
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    // createItem('test', 'decs');
+    // print(getItems());
     return Background(
         child: Container(
       width: double.infinity,

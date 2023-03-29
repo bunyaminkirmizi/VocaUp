@@ -23,9 +23,9 @@ class _BasicBottomNavBarState extends State<Route> {
   int _selectedIndex = 0;
 
   static const List<Widget> _pages = <Widget>[
-    Stats.Body(),
-    Review.Body(),
+    // Stats.Body(),
     MyWords.Body(),
+    Review.Body(),
     Account.Body(),
   ];
 
@@ -39,26 +39,26 @@ class _BasicBottomNavBarState extends State<Route> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-        body: SizedBox(
-            height: size.height - 50, child: _pages.elementAt(_selectedIndex)),
+        body: _pages.elementAt(_selectedIndex),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           items: const <BottomNavigationBarItem>[
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.house),
+            //   label: 'house',
+            // ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.house),
-              label: 'house',
+              icon: Icon(Icons.my_library_add),
+              label: 'Kelimelerim',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.quiz),
-              label: 'quiz',
+              label: 'Tekrar Et',
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.my_library_add),
-              label: 'library',
-            ),
+
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              label: 'account',
+              label: 'Hesabım',
             ),
           ],
           currentIndex: _selectedIndex,
